@@ -13,7 +13,7 @@ export default function App() {
       const newTask = await taskRepo.create({
         title: newTaskTitle,
       })
-      await newTask.save()
+      await newTask.saveAndDo()
       alert(newTask.id)
       setTasks([...tasks, newTask])
       setNewTaskTitle('')

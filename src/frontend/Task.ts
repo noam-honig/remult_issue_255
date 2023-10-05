@@ -1,4 +1,4 @@
-import { BackendMethod, Entity, EntityBase, Fields } from 'remult'
+import { BackendMethod, Entity, EntityBase, Fields, remult } from 'remult'
 
 @Entity('tasks', { allowApiCrud: true })
 export class Task extends EntityBase {
@@ -16,3 +16,5 @@ export class Task extends EntityBase {
     await this.save()
   }
 }
+
+Object.assign(globalThis, { remult, Task })
